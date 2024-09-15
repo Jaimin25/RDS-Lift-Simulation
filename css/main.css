@@ -1,0 +1,212 @@
+body,
+html {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.inputs-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+input {
+  padding: 0.5rem;
+  outline: none;
+}
+
+.submit-btn-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.submit-btn {
+  border: none;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  background-color: #278be8;
+  color: white;
+  font-weight: 800;
+}
+
+.submit-btn:hover {
+  cursor: pointer;
+  background-color: #1f73c2;
+  transition-property: all;
+  transition-duration: 250ms;
+}
+
+.note {
+  text-align: center;
+  color: grey;
+  font-size: 14px;
+  margin-bottom: 0.5rem;
+}
+
+.main-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#inputForm {
+  padding: 0.75rem;
+}
+
+.simulation-container {
+  display: flex;
+  justify-content: start;
+  padding-bottom: 10px;
+}
+
+.building-container {
+  flex: 0 0 200px;
+}
+
+.building {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.lift-btns {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.floor-info {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 125px;
+  padding: 0.5rem;
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+  gap: 0.75rem;
+}
+
+.up-btn,
+.down-btn {
+  border-radius: 100%;
+}
+
+.up-btn:hover,
+.down-btn:hover {
+  cursor: pointer;
+}
+
+.lift-shafts-container {
+  display: flex;
+  flex: 1;
+  position: relative;
+}
+
+.lift-shaft {
+  position: relative;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  border: 1px solid grey;
+}
+
+.lift {
+  width: 80px;
+  height: 125px;
+  background-color: silver;
+  text-align: center;
+  bottom: 0px;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  border-right: 5px solid #0b1215;
+  border-left: 5px solid #0b1215;
+}
+
+.lift-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 25px;
+  width: 100%;
+  background-color: #0b1215;
+  color: white;
+  gap: 5px;
+}
+
+.lift-doors {
+  width: 80px;
+  height: 100px;
+  background-color: #7f7f7f;
+  text-align: center;
+  bottom: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.5s linear;
+  overflow: hidden;
+  position: absolute;
+}
+
+.left-door,
+.right-door {
+  top: 0;
+  width: 40px;
+  height: 100%;
+  background-color: #404040;
+  position: absolute;
+  transition: transform 2.5s ease-in-out;
+}
+
+.left-door {
+  left: 0;
+  transform: translateX(0);
+}
+
+.right-door {
+  right: 0;
+  transform: translateX(0);
+}
+
+.alerts-border {
+  border: 2px blue solid;
+  color: blue;
+
+  animation: blink 1s;
+  animation-iteration-count: 999999;
+}
+
+.up-indicator, .down-indicator {
+  font-weight: bold; 
+  color: #ffffff50;
+}
+
+.indicator-blink {
+  animation: blink-indicator 1s;
+  animation-iteration-count: 999999;
+}
+
+@keyframes blink {
+  50% {
+    border-color: #000;
+    color: #000;
+  }
+}
+
+@keyframes blink-indicator {
+  50% {
+    color: yellow;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+
+  /* For mobile phones: */
+  .inputs-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}

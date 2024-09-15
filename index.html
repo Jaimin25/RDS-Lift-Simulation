@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lift Simulation - Jaimin</title>
+  <link href="css/main.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="main-container">
+    <form id="inputForm" action="">
+      <div class="inputs-container">
+        <div class="floor-input-container">
+          <label>Number of floors:</label>
+          <input type="number" min="1" id="floorInput" />
+        </div>
+        <div class="lift-input-container">
+          <label>Number of lifts:</label>
+          <input type="number" min="1" id="liftInput" />
+        </div>
+      </div>
+      <div class="submit-btn-container">
+        <button class="submit-btn" type="submit">Generate</button>
+      </div>
+    </form>
+    <div id="simulationContainer" class="simulation-container">
+        <div class="building-container" id="buildingContainer"></div>
+        <div class="lift-shafts-container" id="liftShaftsContainer"></div>
+    </div>
+  </div>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
