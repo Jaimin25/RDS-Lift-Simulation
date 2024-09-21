@@ -197,7 +197,14 @@ function findNearestIdleLift(targetFloor) {
 			const distance = Math.abs(targetFloor - lift.currentFloor);
 			if (distance < minDistance) {
 				minDistance = distance;
-				nearestLift = lift;
+				const liftOnLowerFlr = lifts.find(
+					(lift) => !lift.isMoving && lift.currentFloor === targetFloor - 1,
+				);
+				if (distance === 1 && liftOnLowerFlr) {
+					nearestLift = liftOnLowerFlr;
+				} else {
+					nearestLift = lift;
+				}
 			}
 		}
 	}
@@ -225,7 +232,7 @@ function moveLift(lift, targetFloor, direction) {
 			etaInfo.className = `eta-info-lift-${lift.id}`;
 			floorLabel.appendChild(etaInfo);
 		}
-		etaInfo.innerHTML = `Lift ${lift.id} Approaching`;
+		etaInfo.innerHTML = `Lift ${lift.id} ETA: ${(eta / 1000).toFixed(1)}s`;
 		etaInterval = setInterval(() => {
 			eta = eta - 100;
 			etaInfo.innerHTML = `Lift ${lift.id} ETA: ${(eta / 1000).toFixed(1)}s`;
